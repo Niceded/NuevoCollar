@@ -2,97 +2,204 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tienda de Collares</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anuncios Papelería</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: white;
-    }
-
-    header {
-      background-color: silver;
-      color: white;
-      padding: 20px;
-      text-align: center;
+      background: #f0f0f0;
+      padding: 10px;
     }
 
     h1 {
-      margin: 0;
-    }
-
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .producto {
-      background: white;
-      border: 1px solid #eee;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       text-align: center;
+      margin-bottom: 20px;
     }
 
-    .producto img {
-      max-width: 100%;
-      border-radius: 10px;
+    .tab {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+      justify-content: center;
     }
 
-    .producto h3 {
-      margin: 10px 0 5px;
+    .tab button {
+      background-color: #ddd;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin: 5px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
     }
 
-    .producto p {
-      color: #666;
-      font-size: 14px;
-    }
-
-    footer {
-      background-color: silver;
+    .tab button.active {
+      background-color: royalblue;
       color: white;
-      text-align: center;
+    }
+
+    .tabcontent {
+      display: none;
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    .tabcontent.active {
+      display: block;
+    }
+
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+
+    .column {
+      flex: 1 1 30%;
+      background-color: #f9f9f9;
       padding: 10px;
-      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .column img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .column {
+        flex: 1 1 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Collares Elegantes</h1>
-    <p>Descubre nuestra colección exclusiva</p>
-  </header>
+  <h1>Anuncios de Papelería</h1>
 
-  <main class="galeria">
-    <div class="producto">
-      <img src="https://scontent.fpbc1-1.fna.fbcdn.net/v/t1.15752-9/481574241_533217569225436_1234977708599516576_n.jpg?_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=0024fc&amp;_nc_ohc=QTCmYB8CA1gQ7kNvwEmBVlR&amp;_nc_oc=AdnEADq0SpwwzP6RgZ8FhIjR7d_FmP0tVGmEkqDMJ4SgDc3etRl5NdUeUQZqk_Kh1EJtt7Uxo94L8IjK9DveQOu3&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=scontent.fpbc1-1.fna&amp;oh=03_Q7cD2AE_hvYMWs-4VRyhtbbypFs4JgzlDvURI8tD8cke8sm2yw&amp;oe=6832438C" alt="Collar con dije de letra">
-      <h3>Collar con dije de letra</h3>
-      <p>$80.00</p>
-      <p><strong>Disponibles:</strong> A,E,T,C,J,G,L,K,M,P </p>
-    </div>
-    <div class="producto">
-      <img src="https://scontent.fpbc1-2.fna.fbcdn.net/v/t1.15752-9/490531117_691068993380152_2415047565373510495_n.jpg?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=0024fc&amp;_nc_ohc=V6USd6bQ3mUQ7kNvwG2PtzD&amp;_nc_oc=AdnPzQgmMSjqTfQaK7cG9hw4VHo30n3N8NZWCPhlVsc3kTtrcLjeEI9X3C2YGwWmST_KjCCuSgjUA30F7Mx0vhkF&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=scontent.fpbc1-2.fna&amp;oh=03_Q7cD2AF5u8-zUTAFkZMkn9WGMxvVe2MiaJD45l9d4k3noX6qWQ&amp;oe=683240C4" alt="Collar de Spiderman">
-      <h3>Collar de Spiderman</h3>
-      <p>$100.00</p>
-      <p><strong>Disponibles:</strong> 2 unidades</p>
-    </div>
-    <div class="producto">
-      <img src="https://scontent.fpbc1-2.fna.fbcdn.net/v/t1.15752-9/494816076_1203033748146130_1115436184726180915_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=cFDyxK179hAQ7kNvwFfK5i1&_nc_oc=Adl05EAR-Qe-al9GbTHYRcrsHeMSPToOoP3KHlm3jIFQAo_gn5cM6Xbq2obxWWWnoGI0C-9j2c9figoldJW9QEdp&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fpbc1-2.fna&oh=03_Q7cD2AHPH458ZiaLBpcAuLVihEAkZOxrix0WzDlFc2QW3a7Ccg&oe=683786B3" alt="Collar 3">
-      <h3>Collar de La Virgen de Guadalupe</h3>
-      <p>$100.00</p>
-      <p><strong>Disponibles:</strong> 2 unidades</p>
-    </div>
-  </main>
+  <div class="tab">
+    <button onclick="openTab('anuncio1')" class="active">Ofertas</button>
+    <button onclick="openTab('anuncio2')">Regreso a clases</button>
+    <button onclick="openTab('anuncio3')">Nuevos productos</button>
+    <button onclick="openTab('anuncio4')">Descuentos</button>
+    <button onclick="openTab('anuncio5')">Promociones</button>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 Collares Elegantes.Para mas informaciòn: https://www.facebook.com/share/16Qqn9mnDk/ .Envios en Puebla Sur y Centro.</p>
-  </footer>
+  <!-- Anuncio 1 -->
+  <div id="anuncio1" class="tabcontent active">
+    <h3>Ofertas de la semana</h3>
+    <div class="columns">
+      <div class="column">
+        <img src="https://via.placeholder.com/200x150?text=Cuadernos" alt="Cuadernos">
+        <p>Cuadernos 3x2 en marcas seleccionadas.</p>
+      </div>
+      <div class="column">
+        <img src="https://via.placeholder.com/200x150?text=Lápices" alt="Lápices">
+        <p>Lápices a mitad de precio.</p>
+      </div>
+      <div class="column">
+        <img src="https://via.placeholder.com/200x150?text=Colores" alt="Colores">
+        <p>Colores escolares con 10% de descuento.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Anuncio 2 -->
+  <div id="anuncio2" class="tabcontent">
+    <h3>Regreso a clases</h3>
+    <div class="columns">
+      <div class="column">
+        <img src="https://via.placeholder.com/200x150?text=Mochilas" alt="Mochilas">
+        <p>Mochilas desde $199.</p>
+      </div>
+      <div class="column">
+        <img src="https://via.placeholder.com/200x150?text=Útiles" alt="Útiles escolares">
+        <p>Kits escolares completos.</p>
+      </div>
+      <div class="column">
+        <img src="https://via.placeholder.com/200x150?text=Uniformes" alt="Uniformes">
+        <p>Uniformes escolares disponibles.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Anuncio 3 -->
+  <div id="anuncio3" class="tabcontent">
+    <h3>Nuevos productos</h3>
+    <div class="columns">
+      <div class="column">
+        <img src="https://via.placeholder.com/200x150?text=Marcadores" alt="Marcadores">
+        <p>Marcadores borrables de colores.</p>
+      </div>
+      <div class="column">
+        <img src="https://via.placeholder.com/200x150?text=Plumas+gel" alt="Plumas gel">
+        <p>Nuevas plumas de gel brillantes.</p>
+      </div>
+      <div class="column">
+        <img src="https://via.placeholder.com/200x150?text=Estuches" alt="Estuches">
+        <p>Estuches modernos y resistentes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Anuncio 4 -->
+  <div id="anuncio4" class="tabcontent">
+    <h3>Descuentos por mayoreo</h3>
+    <div class="columns">
+      <div class="column">
+        <img src="https://via.placeholder.com/200x150?text=Papelería+al+mayoreo" alt="Mayoreo">
+        <p>Hasta 30% de descuento por volumen.</p>
+      </div>
+      <div class="column">
+        <img src="https://via.placeholder.com/200x150?text=Compra+grande" alt="Compra grande">
+        <p>Ideal para escuelas y oficinas.</p>
+      </div>
+      <div class="column">
+        <img src="https://via.placeholder.com/200x150?text=Pedidos" alt="Pedidos">
+        <p>Haz tu pedido anticipado.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Anuncio 5 -->
+  <div id="anuncio5" class="tabcontent">
+    <h3>Promoción especial</h3>
+    <div class="columns">
+      <div class="column">
+        <img src="https://via.placeholder.com/200x150?text=Rifa" alt="Rifa">
+        <p>Participa en la rifa de una mochila escolar.</p>
+      </div>
+      <div class="column">
+        <img src="https://via.placeholder.com/200x150?text=Compra+300" alt="Promoción 300">
+        <p>Por cada compra mayor a $300, ganas un boleto.</p>
+      </div>
+      <div class="column">
+        <img src="https://via.placeholder.com/200x150?text=Ganadores" alt="Ganadores">
+        <p>Sorteo mensual en nuestra tienda.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openTab(tabId) {
+      const tabs = document.querySelectorAll(".tab button");
+      const contents = document.querySelectorAll(".tabcontent");
+
+      tabs.forEach(btn => btn.classList.remove("active"));
+      contents.forEach(content => content.classList.remove("active"));
+
+      document.getElementById(tabId).classList.add("active");
+      event.target.classList.add("active");
+    }
+  </script>
 
 </body>
 </html>
